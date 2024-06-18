@@ -1,4 +1,4 @@
-ze: Navigate the Unknown**
+# **3D Maze game: Navigate the Unknown**
 
 ## **Introduction**
 Maze is a portfolio project developed as part of my completion of the foundation level of the ALX Software Engineering program.
@@ -8,7 +8,7 @@ Maze is an immersive 3D game built using SDL (Simple DirectMedia Layer) version 
 
 - **Project Blog**: Explore the journey behind Maze's creation in detail in my [blog article](https://thisisteey.medium.com/maze-navigate-the-unknown-b72199272e24).
 
-- **Connect with Me**: Stay connected with me on [LinkedIn](https://www.linkedin.com/in/dadataiwoadeoye) for more insights and updates.
+- **Connect with Me**: Stay connected with me on [LinkedIn](https://www.linkedin.com/in/dadakehindeadeola) for more insights and updates.
 
 ![Maze Display](images/maze_display.png)
 
