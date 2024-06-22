@@ -21,7 +21,7 @@ void raycast(SDL_Instance *sdl, PlayerInfo *player_info,
 	MazeMap_t *maze_map, SDL_bool *map_flag);
 SDL_Point check_intersection(SDL_Point *ctr, double rot_angle,
 	MazeMap_t maze_map, double *raylent, int *side);
-double remove_distortion(PlayerInfo *playersinfo, double raylent,
+double remove_distortion(PlayerInfo *player_info, double raylent,
 	double ray_angle);
 void plot_walls(SDL_Instance *sdl, double raylent, int ray_idx,
 	SDL_Color wall_color);
