@@ -54,7 +54,7 @@ void handle_events(int *exit_flag, SDL_Event *evt, PlayerInfo *player_info,
 		if (evt->type == SDL_QUIT)
 			*exit_flag = 1;
 		if (evt->type == SDL_MOUSEMOTION)
-			mouse_movement(player_info, cursor);
+			cursor_movement(player_info, cursor);
 		switch (evt->key.keysym.sym)
 		{
 			case SDLK_ESCAPE:

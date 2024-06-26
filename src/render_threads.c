@@ -33,11 +33,11 @@ int handle_thread(void *thrd_pntr)
 		plot_untextured_floor(thrd_dt->sdl);
 		raycast(thrd_dt->sdl, thrd_dt->player_info, thrd_dt->maze_map,
 			thrd_dt->map_flag);
-		plot_weapon(thrd_dt->sdl, thrd_dt->maze_map);
+		weapon_plot(thrd_dt->sdl, thrd_dt->maze_map);
 		if (*(thrd_dt->map_flag) != 0)
 		{
 			plot_mazemap(thrd_dt->sdl, thrd_dt->maze_map);
-			render_player(thrd_dt->sdl, thrd_dt->player_info);
+			player_render(thrd_dt->sdl, thrd_dt->player_info);
 		}
 		transmit_viewport(thrd_dt->sdl);
 		endcnt = SDL_GetPerformanceCounter();
