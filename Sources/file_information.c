@@ -2,7 +2,7 @@
 
 /**
  * count_lines - Counting the lines in the file
- * @filepntr - pointer to the file
+ * @filepntr:  pointer to the file
  * Return: number of line
 */
 

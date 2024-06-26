@@ -30,7 +30,7 @@ all : $(SOURCES)
 linux : $(SOURCES)
 	$(COMPILER) $(SOURCES) $(FLAGS) $(LINUX_LINKER_FLAGS) -DLINUX -o $(EXECUTABLE)
 
-#Installation SDL on Linux
+#Installation SDL on Linuxgit
 linux_install : 
 	sudo apt-get install libsdl2-dev
 
