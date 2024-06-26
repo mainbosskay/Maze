@@ -4,10 +4,6 @@
 Maze is a portfolio project developed as part of my completion of the foundation level of the ALX Software Engineering program.
 Maze is an immersive 3D game built using SDL (Simple DirectMedia Layer) version 2.0.2 and Raycasting technology. In the game, players navigate through a maze, exploring its depths and seeking a way out.
 
-- **Experience Maze Live**: Dive into the Maze yourself! Watch a live demo [here](https://www.youtube.com/watch?v=dqG_eWijxrs) and immerse yourself in the adventure.
-
-- **Project Blog**: Explore the journey behind Maze's creation in detail in my [blog article](https://thisisteey.medium.com/maze-navigate-the-unknown-b72199272e24).
-
 - **Connect with Me**: Stay connected with me on [LinkedIn](https://www.linkedin.com/in/dadakehindeadeola) for more insights and updates.
 
 ![Maze Display](images/maze_display.png)
@@ -116,7 +112,7 @@ https://www.seekpng.com
 
 Contains the map data files of the game.
 
-[`src`](https://github.com/mainbosskay/Maze/tree/master/src)
+[`sources`](https://github.com/mainbosskay/Maze/tree/master/src)
 
 Contains all the source code files which are written in C.
 
