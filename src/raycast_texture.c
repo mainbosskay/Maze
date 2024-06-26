@@ -17,13 +17,13 @@ void plot_textured_walls(SDL_Instance *sdl, double wallhgt, int currcol,
 	int blitres;
 	SDL_Surface *surface;
 
-	srcrect.k = currcol % 64;
-	srcrect.t = 0;
+	srcrect.x = currcol % 64;
+	srcrect.y = 0;
 	srcrect.w = 1;
 	srcrect.h = 64;
 	surface = SDL_CreateRGBSurface(0, 1, 64, 32, 0, 0, 0, 0);
-	wallarea.k = currcol;
-	wallarea.t = strt_axis;
+	wallarea.x = currcol;
+	wallarea.y = strt_axis;
 	wallarea.w = 1;
 	wallarea.h = wallhgt;
 

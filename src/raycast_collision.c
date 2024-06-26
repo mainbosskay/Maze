@@ -13,15 +13,15 @@ int check_lines(SDL_Rect wall, SDL_Point *strtpnt, SDL_Point *endpnt)
 	LineSegment rectTop, rectBottom, ray;
 	SDL_Point interpnt = {0, 0};
 
-	rectTop.start_point.k = wall.k;
-	rectTop.start_point.t = wall.t;
-	rectTop.end_point.k = wall.k + wall.w;
-	rectTop.end_point.t = wall.t;
+	rectTop.start_point.x = wall.x;
+	rectTop.start_point.y = wall.y;
+	rectTop.end_point.x = wall.x + wall.w;
+	rectTop.end_point.y = wall.y;
 
-	rectBottom.start_point.k = wall.k;
-	rectBottom.start_point.t = wall.t + wall.h;
-	rectBottom.end_point.k = wall.k + wall.w;
-	rectBottom.end_point.t = wall.t + wall.h;
+	rectBottom.start_point.x = wall.x;
+	rectBottom.start_point.y = wall.y + wall.h;
+	rectBottom.end_point.x = wall.x + wall.w;
+	rectBottom.end_point.y = wall.y + wall.h;
 
 	ray.start_point = *strtpnt;
 	ray.end_point = *endpnt;
@@ -48,22 +48,22 @@ int line_seg_cross(LineSegment *fstln, LineSegment *sndln, SDL_Point *pntpntr)
 	/* for more info visit http://paulbourke.net/geometry/pointlineplane/ */
 
 	denominatr = (
-		sndln->end_point.t - sndln->start_point.t) *
-		(fstln->end_point.k - fstln->start_point.k) -
-		(sndln->end_point.k - sndln->start_point.k) *
-		(fstln->end_point.t - fstln->start_point.t);
+		sndln->end_point.y - sndln->start_point.y) *
+		(fstln->end_point.x - fstln->start_point.x) -
+		(sndln->end_point.x - sndln->start_point.x) *
+		(fstln->end_point.y - fstln->start_point.y);
 
 	frstnum = (
-		sndln->end_point.k - sndln->start_point.k) *
-		(fstln->start_point.t - sndln->start_point.t) -
-		(sndln->end_point.t - sndln->start_point.t) *
-		(fstln->start_point.k - sndln->start_point.k);
+		sndln->end_point.x - sndln->start_point.x) *
+		(fstln->start_point.y - sndln->start_point.y) -
+		(sndln->end_point.y - sndln->start_point.y) *
+		(fstln->start_point.x - sndln->start_point.x);
 
 	scndnum = (
-		fstln->end_point.k - fstln->start_point.k) *
-		(fstln->start_point.t - sndln->start_point.t) -
-		(fstln->end_point.t - fstln->start_point.t) *
-		(fstln->start_point.k - sndln->start_point.k);
+		fstln->end_point.x - fstln->start_point.x) *
+		(fstln->start_point.y - sndln->start_point.y) -
+		(fstln->end_point.y - fstln->start_point.y) *
+		(fstln->start_point.x - sndln->start_point.x);
 
 	if (denominatr == 0)
 		return (0);

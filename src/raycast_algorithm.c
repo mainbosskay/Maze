@@ -21,8 +21,8 @@ void raycast(SDL_Instance *sdl, PlayerInfo *player_info,
 	int side;
 	double curr_ang = (deg - FOV);
 
-	plyctr.k = player_info->position.k + (player_info->position.w / 2);
-	plyctr.t = player_info->position.t + (player_info->position.h / 2);
+	plyctr.x = player_info->position.x + (player_info->position.w / 2);
+	plyctr.y = player_info->position.y + (player_info->position.h / 2);
 	ray_ang = ((FOV) / (SCREEN_WIDTH * 1.0));
 	for (indx = 0 ; indx < SCREEN_WIDTH ; indx++)
 	{
@@ -32,7 +32,7 @@ void raycast(SDL_Instance *sdl, PlayerInfo *player_info,
 		if (*map_flag)
 		{
 			REND_COLOR_GREEN(sdl->sdl_renderer);
-			SDL_RenderDrawLine(sdl->sdl_renderer, plyctr.k, plyctr.t, point.k, point.t);
+			SDL_RenderDrawLine(sdl->sdl_renderer, plyctr.x, plyctr.y, point.x, point.y);
 		}
 		expdist = remove_distortion(player_info, raylent, curr_ang);
 		plot_walls(sdl, expdist, indx, sd_color);
@@ -60,31 +60,31 @@ SDL_Point check_intersection(SDL_Point *ctr, double angle_rot,
 	LineSegment LineSegment = {{0, 0}, {0, 0}};
 	double oppt, adjct, hypt;
 
-	point.k = ctr->k;
-	point.t = ctr->t;
-	wallRect.k = 0;
-	wallRect.t = 0;
+	point.x = ctr->x;
+	point.y = ctr->y;
+	wallRect.x = 0;
+	wallRect.y = 0;
 	wallRect.w = GRID_SIZE;
 	wallRect.h = GRID_SIZE;
 	point = rotate_point(&point, ctr->k, ctr->t, RADIAN(angle_rot),
 		MAX_DRAW_DISTANCE);
 	for (row_indx = 0 ; row_indx < maze_map.num_rows ; row_indx++)
-		for (col_indx = 0 ; col_indx < maze_map.num_columns ; col_indx++)
+		for (col_indx = 0 ; col_indx < maze_map.num_cols ; col_indx++)
 		{
 			if (maze_map.map_layout[row_indx][col_indx] == '0')
 				continue;
-			wallRect.k = (col_indx << 4) + MAP_MARGIN;
-			wallRect.t = (row_indx << 4) + MAP_MARGIN;
+			wallRect.x = (col_indx << 4) + MAP_MARGIN;
+			wallRect.y = (row_indx << 4) + MAP_MARGIN;
 			LineSegment.start_point = *ctr;
 			LineSegment.end_point = point;
 			walls_intersect = SDL_IntersectRectAndLine(
-				&wallRect, &LineSegment.start_point.k, &LineSegment.start_point.t,
-				&LineSegment.end_point.k, &LineSegment.end_point.t);
+				&wallRect, &LineSegment.start_point.x, &LineSegment.start_point.y,
+				&LineSegment.end_point.x, &LineSegment.end_point.y);
 			if (walls_intersect == SDL_TRUE)
 			{
 				*side = check_lines(wallRect, ctr, &LineSegment.start_point);
-				adjct = LineSegment.start_point.k - ctr->k;
-				oppt = LineSegment.start_point.t - ctr->t;
+				adjct = LineSegment.start_point.x - ctr->x;
+				oppt = LineSegment.start_point.y - ctr->y;
 				hypt = sqrt((pow(oppt, 2.0) + pow(adjct, 2.0)));
 				point = *ctr;
 				point = rotate_point(&point, ctr->k, ctr->t, RADIAN(angle_rot), hypt);

@@ -40,10 +40,10 @@ MazeMap_t read_file(FILE *filepntr)
 		linecpy = strtok(strdup(content), "\n");
 		if (linelnt == 0)
 		{
-			maze_map.num_columns = strlen(linecpy);
+			maze_map.num_cols = strlen(linecpy);
 			linelnt++;
 		}
-		auth_line(maze_map.num_columns, linecpy, filepntr, (lnindx + 1));
+		auth_line(maze_map.num_cols, linecpy, filepntr, (lnindx + 1));
 		maze_map.map_layout[lnindx] = linecpy;
 		lnindx++;
 	}

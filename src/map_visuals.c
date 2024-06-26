@@ -16,8 +16,8 @@ void plot_mazemap(SDL_Instance *sdl, MazeMap_t *maze_map)
 	{
 		for (col_indx = 0 ; col_indx < maze_map->num_cols ; col_indx++)
 		{
-			cell.k = (col_indx << 4) + MAP_MARGIN;
-			cell.t = (row_indx << 4) + MAP_MARGIN;
+			cell.x = (col_indx << 4) + MAP_MARGIN;
+			cell.y = (row_indx << 4) + MAP_MARGIN;
 			if (maze_map->map_layout[row_indx][col_indx] == '0')
 			{
 				REND_COLOR(sdl->sdl_renderer, 255, 255, 255, 100);
@@ -50,7 +50,7 @@ void plot_textured_sky(SDL_Instance *sdl, MazeMap_t *maze_map)
 		if (sky_surface == NULL)
 		{
 			printf("Sky Surface Error: %s", SDL_GetError());
-			free_map_data(maze_map);
+			map_data(maze_map);
 			close_sdl(sdl);
 			exit(EXIT_FAILURE);
 		}
@@ -86,8 +86,8 @@ void plot_untextured_floor(SDL_Instance *sdl)
 	double floor_offset = (SCREEN_HEIGHT >> 1);
 	SDL_Rect floor_area;
 
-	floor_area.k = 0;
-	floor_area.t = floor_offset;
+	floor_area.x = 0;
+	floor_area.y = floor_offset;
 	floor_area.w = SCREEN_WIDTH;
 	floor_area.h = (SCREEN_HEIGHT >> 1);
 

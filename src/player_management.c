@@ -65,7 +65,7 @@ void plot_weapon(SDL_Instance *sdl, MazeMap_t *maze_map)
 		if (gun_surface == NULL)
 		{
 			printf("Weapon Surface Error: %s", SDL_GetError());
-			free_map_data(maze_map);
+			map_data(maze_map);
 			close_sdl(sdl);
 			exit(EXIT_FAILURE);
 		}
@@ -101,8 +101,8 @@ void collision_sensor(PlayerInfo *player_info, MazeMap_t *maze_map)
 		{
 			if (maze_map->map_layout[row_indx][col_indx] == '0')
 				continue;
-			wall.k = (col_indx << 4) + MAP_MARGIN;
-			wall.t = (row_indx << 4) + MAP_MARGIN;
+			wall.x = (col_indx << 4) + MAP_MARGIN;
+			wall.y = (row_indx << 4) + MAP_MARGIN;
 			if (SDL_HasIntersection(&player_box, &wall))
 				skid_player(player_info);
 		}
