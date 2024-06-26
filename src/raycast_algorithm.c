@@ -66,7 +66,7 @@ SDL_Point check_intersection(SDL_Point *ctr, double angle_rot,
 	wallRect.y = 0;
 	wallRect.w = GRID_SIZE;
 	wallRect.h = GRID_SIZE;
-	point = rotate_point(&point, ctr->k, ctr->t, RADIAN(angle_rot),
+	point = rotate_point(&point, ctr->x, ctr->y, RADIAN(angle_rot),
 		MAX_DRAW_DISTANCE);
 	for (row_indx = 0 ; row_indx < maze_map.num_rows ; row_indx++)
 		for (col_indx = 0 ; col_indx < maze_map.num_cols ; col_indx++)
@@ -87,7 +87,7 @@ SDL_Point check_intersection(SDL_Point *ctr, double angle_rot,
 				oppt = LineSegment.start_point.y - ctr->y;
 				hypt = sqrt((pow(oppt, 2.0) + pow(adjct, 2.0)));
 				point = *ctr;
-				point = rotate_point(&point, ctr->k, ctr->t, RADIAN(angle_rot), hypt);
+				point = rotate_point(&point, ctr->x, ctr->y, RADIAN(angle_rot), hypt);
 				*raylent = hypt;
 			}
 		}

@@ -72,10 +72,10 @@ int line_seg_cross(LineSegment *fstln, LineSegment *sndln, SDL_Point *pntpntr)
 
 	if (paraK >= 0 && paraK <= (1 << 14) && paraT >= 0 && paraT <= (1 << 14))
 	{
-		pntpntr->k = fstln->start_point.k + ((paraK * (fstln->end_point.k -
-			fstln->start_point.k)) >> 14);
-		pntpntr->t = fstln->start_point.t + ((paraK * (fstln->end_point.t -
-			fstln->start_point.t)) >> 14);
+		pntpntr->x = fstln->start_point.x + ((paraK * (fstln->end_point.x -
+			fstln->start_point.x)) >> 14);
+		pntpntr->y = fstln->start_point.y + ((paraK * (fstln->end_point.y -
+			fstln->start_point.y)) >> 14);
 		return (1);
 	}
 	return (0);
