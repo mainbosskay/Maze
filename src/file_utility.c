@@ -1,4 +1,4 @@
-#include "../headers.maze.h"
+#include "../headers/maze.h"
 
 /**
  * check_array - Checking if certain value is in an array
