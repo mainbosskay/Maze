@@ -7,7 +7,7 @@
  * Return: it is void
 */
 
-void render_player(SDL_Instance *sdl, PlayerInfo *player_info)
+void player_render(SDL_Instance *sdl, PlayerInfo *player_info)
 {
 	REND_COLOR_YELLOW(sdl->sdl_renderer);
 	SDL_RenderFillRect(sdl->sdl_renderer, &player_info->position);
@@ -54,7 +54,7 @@ void skid_player(PlayerInfo *player_info)
  * Return: it is void
 */
 
-void plot_weapon(SDL_Instance *sdl, MazeMap_t *maze_map)
+void weapon_plot(SDL_Instance *sdl, MazeMap_t *maze_map)
 {
 	SDL_Rect gun_position = {700, 450, 700, 450};
 	SDL_Surface *gun_surface;

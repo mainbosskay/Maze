@@ -1,13 +1,13 @@
 #include "../headers/maze.h"
 
 /**
- * mouse_movement - Monitors mouse position and modifies player rotation
+ * cursor_movement - Monitors mouse position and modifies player rotation
  * @player_info: pointer to PlayerInfo data structure
  * @cursor: pointer to SDL_Point stores mouse cordinates
  * Return: it is void
 */
 
-void mouse_movement(PlayerInfo *player_info, SDL_Point *cursor)
+void cursor_movement(PlayerInfo *player_info, SDL_Point *cursor)
 {
 	int mouse_pos_x = cursor->x;
 	int movement_x = 0;
