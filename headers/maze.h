@@ -38,11 +38,11 @@
  */
 
 #include "structures.h"
-#include "sdl_macros.h"
-#include "file_utilities.h"
+#include "sdl_helpers.h"
+#include "file_ops.h"
 #include "player.h"
-#include "map_raycasting.h"
-#include "rendering_threads.h"
-#include "sdl_functions.h"
+#include "raycast_operations.h"
+#include "rendering_tasks.h"
+#include "sdl_utilities.h"
 
 #endif

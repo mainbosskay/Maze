@@ -8,6 +8,6 @@
 
 /* Rendering and Thread Handling functions */
 void transmit_viewport(SDL_Instance *sdl);
-int handle_thread(void *thrd_ptr);
+int handle_thread(void *thrd_pntr);
 
 #endif

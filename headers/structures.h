@@ -42,14 +42,14 @@ typedef struct PlayerInfo
  * struct MazeMap - Structure contains game map layout
  * @map_layout: pointer to 2D array representing the map
  * @num_rows: represents number of rows in map
- * @num_columns: represents the number of columns in the map
+ * @num_cols: represents the number of columns in the map
  */
 
 typedef struct MazeMap
 {
 	char **map_layout;
 	int num_rows;
-	int num_columns;
+	int num_cols;
 } MazeMap_t;
 
 /**
