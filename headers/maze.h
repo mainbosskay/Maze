@@ -42,7 +42,7 @@
 #include "file_ops.h"
 #include "player.h"
 #include "raycast_operations.h"
-#include "rendering_tasks.h"
+#include "rendering_task.h"
 #include "sdl_utilities.h"
 
 #endif
